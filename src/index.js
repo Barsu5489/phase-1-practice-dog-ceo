@@ -18,13 +18,20 @@ function breed(){
     .then(res=>res.json())
     .then(breeds=>{
         const breed = Object.keys(breeds.message)
+        const dogBreeds = document.getElementById('dog-breeds')
     for(let i = 0; i < breed.length; i++){
         console.log(breed[i])
+        const li = document.createElement('li')
+        li.textContent = breed[i]
+        dogBreeds.appendChild(li)
+        li.addEventListener('click', ()=>{
+            li.style.color = 'red'
+        })
     }
        
     
     })   
-    
+
 }
 
 
