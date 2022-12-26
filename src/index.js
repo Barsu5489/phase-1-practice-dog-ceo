@@ -26,6 +26,15 @@ function breed(){
         dogBreeds.appendChild(li)
         li.addEventListener('click', ()=>{
             li.style.color = 'red'
+            console.log(li.textContent.split('').forEach(letter=>{
+                if(letter == 'a'){
+                    li.style.display = 'block'
+                    console.log('yes breddda')
+                }else{
+                    li.style.display = 'none'
+                    console.log('removed')
+                }
+            }))
         })
     }
        
