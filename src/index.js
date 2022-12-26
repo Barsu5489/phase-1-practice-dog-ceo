@@ -8,14 +8,27 @@ function fetchImages(){
             dogImageContainer.appendChild(div)
             const img = document.createElement('img')
             img.src = image.message[i]
-            console.log(image.message)
             div.appendChild(img)
         }
     })
 }
 
+function breed(){
+    fetch('https://dog.ceo/api/breeds/list/all')
+    .then(res=>res.json())
+    .then(breeds=>{
+        const breed = Object.keys(breeds.message)
+    for(let i = 0; i < breed.length; i++){
+        console.log(breed[i])
+    }
+       
+    
+    })   
+}
+
 
 document.addEventListener('DOMContentLoaded',()=>{
+    breed()
     fetchImages()
 })
-console.log('%c HI', 'color: firebrick')
+console.log('%c HI', 'color: blue')
